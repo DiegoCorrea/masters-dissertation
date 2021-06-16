@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH --nodes=1               #Numero de Nós
+#SBATCH --ntasks-per-node=1     #Numero de tarefas por Nó
+#SBATCH --ntasks=1              #Numero de tarefas
+#SBATCH -p mesca2               #Fila (partition) a ser utilizada
+#SBATCH -J R|PO|M|3             #Nome job
+#SBATCH --exclusive             #Utilização exclusiva dos nós durante a execução do job
+#SBATCH --time=47:59:00         #Altera o tempo limite
+#SBATCH --output=logs/slurm/R-PO-M-3-%A.out
+
+#Exibe os nos alocados para o Job
+echo $SLURM_JOB_NODELIST
+nodeset -e $SLURM_JOB_NODELIST
+
+#acessa o diretório onde o script está localizado
+cd /scratch/calibrec/diego.silva/calibrated_recommendation/
+
+module load anaconda3/2020.11
+
+#executa o script
+/scratch/calibrec/diego.silva/.conda/envs/calibrated_recommendation/bin/python3.7 recommenders.py --recommender=POPULARITY --fold=3 --dataset=Movielens-20M

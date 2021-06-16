@@ -1,0 +1,25 @@
+#!/bin/bash
+#SBATCH --output=logs/slurm/slurm-%A.out
+#SBATCH --nodes=1           #Numero de Nós
+#SBATCH --ntasks-per-node=1 #Numero de tarefas por Nó
+#SBATCH --ntasks=1          #Numero de tarefas
+#SBATCH -p gdl           #Fila (partition) a ser utilizada
+#SBATCH -J GRD-CO           #Nome job
+#SBATCH --exclusive         #Utilização exclusiva dos nós durante a execução do job
+
+#Exibe os nos alocados para o Job
+echo $SLURM_JOB_NODELIST
+nodeset -e $SLURM_JOB_NODELIST
+
+# cd $SLURM_SUBMIT_DIR/calibrated_recommendation/
+
+#acessa o diretório onde o script está localizado
+cd /scratch/calibrec/diego.silva/calibrated_recommendation/
+
+module load anaconda3/2020.11
+
+conda init bash
+conda activate calibrated_recommendation
+
+#executa o script
+/scratch/calibrec/diego.silva/.conda/envs/calibrated_recommendation/bin/python3.7 movielens_grid_search.py CO_CLUSTERING > logs/CO_OUTPUT.log

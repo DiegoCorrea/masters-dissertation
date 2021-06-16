@@ -1,0 +1,1 @@
+{"n_factors": 50, "n_epochs": 30, "reg_pu": 0.003, "reg_qi": 0.05, "reg_bu": 0.003, "reg_bi": 0.005, "lr_bu": 0.003, "lr_bi": 0.005, "biased": true}

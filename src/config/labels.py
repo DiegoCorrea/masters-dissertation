@@ -1,0 +1,150 @@
+# Raw dataset labels
+RAW_ITEM_LABEL = 'itemId'
+RAW_USER_LABEL = 'userId'
+RAW_TITLE_LABEL = 'title'
+RAW_TIMESTAMP_LABEL = 'timestamp'
+RAW_ARTIST_LABEL = 'artist'
+RAW_ALBUM_LABEL = 'album'
+RAW_YEAR_LABEL = 'year'
+RAW_TRACK_LABEL = 'trackId'
+RAW_GENRES_LABEL = 'genres'
+RAW_MAJORITY_GENRE = 'majority-genre'
+RAW_MINORITY_GENRE = 'minority-genre'
+RAW_MOVIE_ID_LABEL = 'movieId'
+RAW_PLAY_COUNT_LABEL = 'play_count'
+RAW_RATING_LABEL = 'rating'
+
+# Data labels
+USER_LABEL = 'USER_ID'
+ITEM_LABEL = 'ITEM_ID'
+TRANSACTION_VALUE_LABEL = 'TRANSACTION_VALUE'
+PREDICTED_VALUE_LABEL = 'PREDICTED_VALUE'
+GENRES_LABEL = 'GENRES'
+TITLE_LABEL = 'TITLE'
+TIME_LABEL = 'TIMESTAMP'
+ORDER_LABEL = 'ORDER'
+BIAS_VALUE_LABEL = 'BIAS_VALUE'
+
+est_label = 'est'
+original_value_label = 'original_rating'
+
+# Recommenders labels
+USER_KNN_LABEL = 'USER_KNN'
+ITEM_KNN_LABEL = 'ITEM_KNN'
+SVD_LABEL = 'SVD'
+SVDpp_LABEL = 'SVDpp'
+NMF_LABEL = 'NMF'
+SLOPE_LABEL = 'SLOPE'
+CO_CLUSTERING_LABEL = 'CO_CLUSTERING'
+POPULARITY_LABEL = 'POPULARITY'
+BEST_SCORE_LABEL = 'BEST_SCORE'
+
+TEST_RECOMMENDERS = [
+    USER_KNN_LABEL,
+    SVD_LABEL
+]
+TRADITIONAL_RECOMMENDERS = [
+    POPULARITY_LABEL,
+    BEST_SCORE_LABEL
+]
+LEARNING_RECOMMENDERS = [
+    NMF_LABEL,
+    CO_CLUSTERING_LABEL,
+    SLOPE_LABEL,
+    SVD_LABEL,
+    SVDpp_LABEL,
+    USER_KNN_LABEL,
+    ITEM_KNN_LABEL
+]
+FULL_RECOMMENDERS = TRADITIONAL_RECOMMENDERS + LEARNING_RECOMMENDERS
+GRID_SEARCH_RECOMMENDERS = [
+    ITEM_KNN_LABEL,
+    USER_KNN_LABEL,
+    SVD_LABEL,
+    NMF_LABEL,
+    CO_CLUSTERING_LABEL,
+    SVDpp_LABEL
+]
+
+# Evaluation Metric labels
+
+# Divergence Measures labels
+FAIRNESS_METRIC_LABEL = 'FAIRNESS_METRIC'
+KL_LABEL = 'KL'
+HE_LABEL = 'HE'
+CHI_LABEL = 'CHI'
+
+#
+TOTAL_TIMES_LABEL = 'total_times'
+USER_MODEL_SIZE_LABEL = 'user_model_size'
+NUMBER_OF_SHORT_TAIL_ITEMS_LABEL = '#_of_short_tail_items'
+NUMBER_OF_MEDIUM_TAIL_ITEMS_LABEL = '#_of_medium_tail_items'
+NUMBER_OF_LONG_TAIL_ITEMS_LABEL = '#_of_long_tail_items'
+PERCENTAGE_OF_SHORT_TAIL_ITEMS_LABEL = '%_of_short_tail_items'
+PERCENTAGE_OF_MEDIUM_TAIL_ITEMS_LABEL = '%_of_medium_tail_items'
+PERCENTAGE_OF_LONG_TAIL_ITEMS_LABEL = '%_of_long_tail_items'
+NUMBER_OF_GENRES = "nGenre"
+group_of_users = "gUsers"
+
+# Popularity types
+TYPE_OF_POPULARITY = 'TYPE_OF_POPULARITY'
+SHORT_TAIL_TYPE = 'short_head'
+MEDIUM_TAIL_TYPE = 'medium_tail'
+LONG_TAIL_TYPE = 'long_tail'
+
+NICHE_TYPE = 'niche'
+DIVERSE_TYPE = 'diverse'
+FOCUSED_TYPE = 'focused'
+
+#
+TYPE_OF_GENRE_GROUPS_LABEL = 'TYPE_OF_GENRE_GROUPS'
+EXPLORER_TYPE = 'explorer'
+COMMON_TYPE = 'common'
+LOYAL_TYPE = 'loyal'
+
+reco_popularity_label = "reco_popularity"
+normalized_reco_popu_label = 'normalized_reco_popularity'
+preference_popularity_label = "preference_popularity"
+normalized_preference_popu_label = 'normalized_preference_popularity'
+
+# ######################### #
+#    Evaluate Variables     #
+# ######################### #
+# Structure Labels
+ALGORITHM_LABEL = 'algorithm'
+MACE_LABEL = 'MACE'
+MAP_LABEL = 'MAP'
+MRR_LABEL = 'MRR'
+MC_LABEL = 'MRMC'
+AT_LABEL = "AT_"
+
+# List of Strings
+
+FIXED_LABEL = 'FIXED'
+LAMBDA_LABEL = 'LAMBDA'
+LAMBDA_VALUE_LABEL = 'LAMBDA_VALUE'
+EVALUATION_METRIC_LABEL = 'EVALUATION_METRIC'
+EVALUATION_VALUE_LABEL = 'EVALUATION_VALUE'
+
+# ####################################### #
+#    Config Post Processing Variables     #
+# ####################################### #
+
+GREEDY_ALGORITHM_LABEL = 'GREEDY_ALGORITHM'
+SURROGATE_LABEL = 'SURROGATE'
+
+TRADE_OFF_LABEL = 'TRADE_OFF'
+COUNT_GENRES_TRADE_OFF_LABEL = 'COUNT_GENRES'
+SUN_GENRES_PROBABILITY_TRADE_OFF_LABEL = 'SUN_GENRES_PROBABILITY'
+VARIANCE_TRADE_OFF_LABEL = 'VARIANCE'
+MANUAL_VALUE_LABEL = 'MANUAL_VALUE'
+
+CALIBRATION_LABEL = 'CALIBRATION'
+LINEAR_CALIBRATION_LABEL = 'LIN'
+LOGARITHMIC_CALIBRATION_LABEL = 'LOG'
+
+FIXED_LAMBDA_LABEL = 'FIXED_LAMBDA_LABEL'
+PERSON_LAMBDA_LABEL = 'PERSON_LAMBDA_LABEL'
+
+EVALUATION_LIST_LABELS = [ALGORITHM_LABEL, CALIBRATION_LABEL, FAIRNESS_METRIC_LABEL, LAMBDA_LABEL, LAMBDA_VALUE_LABEL,
+                          EVALUATION_METRIC_LABEL, EVALUATION_VALUE_LABEL]
