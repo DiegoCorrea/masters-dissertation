@@ -3,7 +3,7 @@ Este repositório possui o código da minha dissertação de mestrado realizada 
 O texto da dissertação pode ser encontrado no Repositório Institucional da UFBA sob o título []().
 A pesquisa foi dividida em duas parte que são encontradas nos dois artigos:  
 - Exploiting Personalized Calibration and Metrics for Fairness Recommendation
-  - [Codigo](https://github.com/DiegoCorrea/Calibrated-Recommendations-Fairness-with-the-Users-Genres-Preferences#exploiting-personalized-calibration-and-metrics-for-fairness-recommendation)  
+  - [Codigo](https://github.com/DiegoCorrea/Exploiting-Personalized-Calibration-and-Metrics-for-Fairness-Recommendation)  
   - [Docker Container no Code Ocean](https://doi.org/10.24433/CO.6790880.v1)  
   - [Artigo publicado na revista Expert Systems With Application](https://doi.org/10.1016/j.eswa.2021.115112)
 - Em publicação...
