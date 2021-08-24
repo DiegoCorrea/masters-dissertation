@@ -34,3 +34,31 @@ def coefficient(results_df, db):
 
                 coe_df.to_csv(os.path.join(save_dir, file_name), index=False)
 
+
+def decision(results_df, db):
+    save_dir = coefficient_results_path(db) + 'decision/'
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+    for divergence in results_df[FAIRNESS_METRIC_LABEL].unique().tolist():
+        divergence_df = results_df[results_df[FAIRNESS_METRIC_LABEL] == divergence]
+        for tradeoff in divergence_df[CALIBRATION_LABEL].unique().tolist():
+            tradeoff_divergence_df = divergence_df[divergence_df[CALIBRATION_LABEL] == tradeoff]
+            metric_dict = {}
+            for algorithm in tradeoff_divergence_df[ALGORITHM_LABEL].unique().tolist():
+                algorithm_tradeoff_divergence_df = tradeoff_divergence_df[
+                    tradeoff_divergence_df[ALGORITHM_LABEL] == algorithm]
+                map_df = algorithm_tradeoff_divergence_df[
+                    algorithm_tradeoff_divergence_df[EVALUATION_METRIC_LABEL] == MAP_LABEL]
+                map_value = map_df[EVALUATION_VALUE_LABEL].mean()
+                dec = 0
+                for metric in [MACE_LABEL, MC_LABEL]:
+                    metric_df = algorithm_tradeoff_divergence_df[
+                        algorithm_tradeoff_divergence_df[EVALUATION_METRIC_LABEL] == metric]
+                    metric_value = metric_df[EVALUATION_VALUE_LABEL].mean()
+                    dec += round(metric_value/map_value, 2)
+                metric_dict[algorithm] = [round(dec, 2)]
+            metric_sorted_dict = dict(sorted(metric_dict.items()))
+            coe_df = pd.DataFrame.from_dict(metric_sorted_dict)
+            file_name = "_".join([divergence, tradeoff, '.csv'])
+
+            coe_df.to_csv(os.path.join(save_dir, file_name), index=False)

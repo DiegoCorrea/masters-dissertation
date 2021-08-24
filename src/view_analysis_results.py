@@ -5,7 +5,7 @@ from os.path import isfile, join
 from src.config import path_dir_files
 from src.config.path_dir_files import data_results_path, ALL_RECOMMENDERS_RESULTS_FILE
 from src.config.variables import MOVIELENS_20M_DATASET, OMS_FULL_DATASET
-from src.evaluation.coefficient import coefficient
+from src.evaluation.coefficient import coefficient, decision
 from src.processing.merge_results import merge_all_results, merge_recommender_results
 import pandas as pd
 import os
@@ -31,4 +31,5 @@ def coefficient_for_calibration(dbs=None):
     for db in dbs:
         logger.info(" ".join(["+", db]))
         evaluation_results_df = pd.read_csv(os.path.join(data_results_path(db), ALL_RECOMMENDERS_RESULTS_FILE))
-        coefficient(evaluation_results_df, db)
+        # coefficient(evaluation_results_df, db)
+        decision(evaluation_results_df, db)

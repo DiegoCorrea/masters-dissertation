@@ -1,7 +1,13 @@
-# Calibrated Recommendation  
-Some introdutory text
+# Dissertação de Mestrado
+Este repositório possui o código da minha dissertação de mestrado na Universidade Federal da Bahia no Programa de Pós-Graduação em Ciência da Computação (PGCOMP-UFBA).  
+O texto da dissertação pode ser encontrado no Repositório Institucional da UFBA sob o título []().
+A pesquisa foi dividida em duas parte que são encontradas nos dois artigos:
+- 
+- 
 
-## To Ubuntu/Debian  
+OBS: Tutorial de instalação com algumas lacunas. Verifique os nomes e diretorios.  
+
+# To Ubuntu/Debian  
 
 ### Intall
 1. Update and upgrade the OS: `sudo apt update && sudo apt upgrade -y`  
@@ -11,7 +17,7 @@ Some introdutory text
 1.1. Install: `bash Anaconda3-2020.11-Linux-x86_64.sh`  
 1. PyCharm (Optional: for better development)  
   
-### Config  
+## Config  
 1. Git:  
 .1. Reload bash: `source ~/.bashrc`  
 .2. Generate ssh key: `ssh-keygen`  
@@ -22,18 +28,18 @@ Some introdutory text
 1. Load the conda environment: `conda env create -f environment.yml`  
 1. Active the environment: `conda activate calibrated_recommendation`  
 
-### Get Dataset
+## Get Dataset
 1. Get the dataset: `python get_dataset.py`    
 2. Unzip the dataset: `unzip dataset.zip`  
 3. Move to dataset dir  
   
-### Run  
+## Run  
 1. Extract language: `sh extract_language.sh`
 1. Code on background: `python start_recommenders.py > log/output_terminal.log 2>&1 & disown`
 
-## To RedHat/CentOS  
+# To RedHat/CentOS  
 
-### Intall
+## Intall
 1. Update and upgrade the OS: `sudo yum update -y`  
 1. Git: `sudo yum install git -y`  
 1. Softwares de apoio: `sudo yum install openssl-devel bzip2-devel libffi-devel -y` 
@@ -54,7 +60,7 @@ Some introdutory text
 .4. Reload bash: `source ~/.bashrc` 
 1. PyCharm (Optional: for better development)  
   
-### Config  
+## Config  
 1. Git:   
 .1. Generate ssh key: `ssh-keygen`  
 .2. Copy the key: `cat ~/.ssh/id_rsa.pub`    
@@ -64,10 +70,10 @@ Some introdutory text
 1. Load the conda environment: `conda env create -f environment.yml`  
 1. Active the environment: `conda activate calibrated_recommendation`  
 
-### Get Dataset
+## Get Dataset
 Get the dataset: `python get_dataset.py`  
 Unzip and move to dataset dir.  
   
-### Run  
+## Run  
 1. Extract language: `sh extract_language.sh`
 1. Code on background: `python start_recommenders.py > logs/output_terminal.log 2>&1 & disown`    
